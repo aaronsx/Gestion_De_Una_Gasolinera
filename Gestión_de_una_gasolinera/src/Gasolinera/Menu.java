@@ -7,9 +7,9 @@ public class Menu {
 
 	public static void main(String[] args) 
 	{
-		//Creamos un objeto de tipo Gasolineria
+		//Creamos un objeto de tipo Gasolineria para tener el mismo tipo que en Gasolineria.java y poder llamar metodos de esa clase
 		Gasolineria gaso = new Gasolineria();
-		//La base de datos
+		//La base de datos del tipo Gasolineria 
 		ArrayList<Gasolineria> listgasolinera=new ArrayList<>();
 		Scanner preguntar = new Scanner(System.in);		
 		Boolean cerrarMenu = false;
