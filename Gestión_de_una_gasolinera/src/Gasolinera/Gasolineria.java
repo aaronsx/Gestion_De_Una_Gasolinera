@@ -92,9 +92,7 @@ public class Gasolineria
 	private String matricula;
 	private double litos;
 	private double importe;
-	private int contador = 0;
 	//Los getters y los setters de los atributos
-	
 	public String getDni() {
 		return dni;
 	}
@@ -125,11 +123,5 @@ public class Gasolineria
 	}
 	public void setImporte(double importe) {
 		this.importe = importe;
-	}
-	public int getContador() {
-		return contador;
-	}
-	public void setContador(int contador) {
-		this.contador = contador;
 	}
 }
