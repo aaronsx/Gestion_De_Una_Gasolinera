@@ -9,7 +9,69 @@ import java.time.format.DateTimeFormatter;
 
 public class Gasolineria 
 {
-	//Mi objeto gasolinera
+	//Metodo de una gasolinera la opcion 1 y 2
+	public Gasolineria gasolinera(boolean ok, ArrayList<Gasolineria>bd)
+	{
+		//Creamos un objeto gasoVacio para poder devolver el tipo de obeto y poder añadirlo a la base de datos
+		Gasolineria gasoVacio = new Gasolineria();
+		 Scanner pedir = new Scanner(System.in);
+		 //Construccion de la fecha y hora en este momento
+		 String dateTime = DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a")
+                 .format(LocalDateTime.now());
+		 
+		 
+		 //Pedimos los litros
+		 System.out.println("Introduce los litros:";
+		
+		 //Implementamos los litros en la base de datos
+		 gasoVacio.setLitos(pedir.nextDouble());
+		 
+		 //Pedimos el importe
+		 System.out.println("Introduce el importe:;
+		 
+		 //Implementamos el importe en la base de datos
+		 gasoVacio.setImporte(pedir.nextDouble());
+				    
+		 //Implementamos la fecha y hora en la base de datos
+		 gasoVacio.setFecha(dateTime);
+				    
+		 //If si la persona introduce la 2 opcion pasa y si no pues va por el else
+		if(ok)
+		{
+			System.out.println("Introduce tu dni:);
+			//Implementamos el dni
+			gasoVacio.setDni(pedir.next());
+			System.out.println("Introduce tu matricula:);
+			//Implementamos la matricula
+			gasoVacio.setMatricula(pedir.next());
+		}
+		else
+		{
+			//En este caso solo entra cuando la persona ha elegido la 1 opcion y no se le tiene que pedir ni el dni ni la matricula
+			
+			//Guardamos dni como si fuera nulo
+			gasoVacio.setDni(null);
+			//Guardamos matricula como si fuera nula 
+			gasoVacio.setMatricula(null);
+		}
+		//Devolvemos gasoVacio para que en la llamada se pueda implementar en una lista del mismo tipo que en este caso es Gasolineria
+		return gasoVacio;
+	}
+	//Mostrar repostaje opcion 3
+		public void mostrardatosgasolinera(ArrayList<Gasolineria>bd)
+		{	//Un bucle forech para sacar todos los datos de la base de datos de gasolinera
+			//Dentro del bloque recorre toda la lista bd con un atributo del tipo Gasolina que es el mismo que el de la base de datos
+			for(Gasolineria gaso:bd)
+			{
+				System.out.println("Dni: "+gaso.getDni()+", Importe: "+gaso.getImporte()+", Litros: "+gaso.getLitos()+", Matricula: "+gaso.getMatricula()+", fecha: "+gaso.getFecha());
+				System.out.println("");
+			}
+		}
+	
+	//--------------------------ATRIBUTOS, GETTERS Y SETTERS, OBJETOS TIPO GASOLINA------------------------------------
+	
+	
+	//Mi objeto gasolinera en uno no esta vacio mientras que en el otro lo tengo que declarar vacio 
 	public Gasolineria(String dni, String fecha, String matricula, double litos,double importe) 
 	{
 		super();
@@ -70,59 +132,4 @@ public class Gasolineria
 	public void setContador(int contador) {
 		this.contador = contador;
 	}
-	
-	
-	//Gaso
-	public Gasolineria gasolinera(boolean ok, ArrayList<Gasolineria>bd)
-	{
-		Gasolineria gasoVacio = new Gasolineria();
-		 Scanner pedir = new Scanner(System.in);
-		 //Haciendo la fecha en este momento
-		 String dateTime = DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a")
-                 .format(LocalDateTime.now());
-		 
-		 
-		 //litros
-		 System.out.println("Introduce los litros");
-		
-		 //Implementamos los litros
-		 gasoVacio.setLitos(pedir.nextDouble());
-		 
-		 //Importe
-		 System.out.println("Introduce el importe");
-		 
-		 //Implementamos el importe
-		 gasoVacio.setImporte(pedir.nextDouble());
-		 //Fecha nueva
-	
-		 gasoVacio.setFecha(dateTime);
-		 //Un if que si es verdadero pida mas cosas y si es falso lo ponga nulo
-		if(ok)
-		{
-			System.out.println("Introduce tu dni");
-			//Implementamos el dni
-			gasoVacio.setDni(pedir.next());
-			System.out.println("Introduce tu matricula");
-			//Implementamos la matricula
-			gasoVacio.setMatricula(pedir.next());
-		}
-		else
-		{
-			//Guardamos dni nulo
-			gasoVacio.setDni(null);
-			//Guardamos matricula nula
-			gasoVacio.setMatricula(null);
-		}
-		return gasoVacio;
-	}
-	//Pedir repostaje
-		public void mostrardatosgasolinera(ArrayList<Gasolineria>bd)
-		{	//Un bucle forech para sacar todos los datos de la base de datos de gasolinera
-			for(Gasolineria gaso:bd)
-			{
-				System.out.println("Dni: "+gaso.getDni()+", Importe: "+gaso.getImporte()+", Litros: "+gaso.getLitos()+", Matricula: "+gaso.getMatricula()+", fecha: "+gaso.getFecha());
-				System.out.println("");
-			}
-		}
-	
 }
