@@ -7,6 +7,7 @@ public class Menu {
 
 	public static void main(String[] args) 
 	{
+		//Creamos un objeto de tipo Gasolineria
 		Gasolineria gaso = new Gasolineria();
 		//La base de datos
 		ArrayList<Gasolineria> listgasolinera=new ArrayList<>();
