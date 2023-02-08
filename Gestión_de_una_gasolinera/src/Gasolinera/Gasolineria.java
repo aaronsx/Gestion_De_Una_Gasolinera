@@ -21,13 +21,13 @@ public class Gasolineria
 		 
 		 
 		 //Pedimos los litros
-		 System.out.println("Introduce los litros:";
+		 System.out.println("Introduce los litros:");
 		
 		 //Implementamos los litros en la base de datos
 		 gasoVacio.setLitos(pedir.nextDouble());
 		 
 		 //Pedimos el importe
-		 System.out.println("Introduce el importe:;
+		 System.out.println("Introduce el importe:");
 		 
 		 //Implementamos el importe en la base de datos
 		 gasoVacio.setImporte(pedir.nextDouble());
@@ -38,10 +38,10 @@ public class Gasolineria
 		 //If si la persona introduce la 2 opcion pasa y si no pues va por el else
 		if(ok)
 		{
-			System.out.println("Introduce tu dni:);
+			System.out.println("Introduce tu dni:");
 			//Implementamos el dni
 			gasoVacio.setDni(pedir.next());
-			System.out.println("Introduce tu matricula:);
+			System.out.println("Introduce tu matricula:");
 			//Implementamos la matricula
 			gasoVacio.setMatricula(pedir.next());
 		}

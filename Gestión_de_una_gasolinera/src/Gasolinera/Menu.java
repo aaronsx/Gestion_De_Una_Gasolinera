@@ -13,7 +13,7 @@ public class Menu {
 		ArrayList<Gasolineria> listgasolinera=new ArrayList<>();
 		Scanner preguntar = new Scanner(System.in);		
 		Boolean cerrarMenu = false;
-		boolean otraopcion;
+		
 		int opcion;
 		while(!cerrarMenu) {	
 			//Mostramos el menú
@@ -24,12 +24,10 @@ public class Menu {
 			
 			switch (opcion) {			
 				case 1:
-					otraopcion=false;
-					listgasolinera.add(gaso.gasolinera(otraopcion, listgasolinera));
+					listgasolinera.add(gaso.gasolinera(false, listgasolinera));
 					break;
 				case 2:
-					otraopcion=true;
-					listgasolinera.add(gaso.gasolinera(otraopcion, listgasolinera));
+					listgasolinera.add(gaso.gasolinera(true, listgasolinera));
 					
 					break;
 				case 3:
