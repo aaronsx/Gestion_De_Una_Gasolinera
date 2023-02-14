@@ -15,14 +15,16 @@ public class Menu {
 		Boolean cerrarMenu = false;
 		
 		int opcion;
-		while(!cerrarMenu) {	
+		while(!cerrarMenu) 
+		{	
 			//Mostramos el menú
 			mostrarMenu();
 			System.out.println("Introduza la opción deseada: ");
 			opcion = preguntar.nextInt();
 			System.out.println("[INFO] - Has seleccionado la opcion " + opcion);
 			
-			switch (opcion) {			
+			switch (opcion) 
+			{			
 				case 1:
 					listgasolinera.add(gaso.gasolinera(false, listgasolinera));
 					break;
@@ -42,7 +44,9 @@ public class Menu {
 			}
 		}
 	}
-	static void mostrarMenu() {
+	static void mostrarMenu() 
+	{
+		System.out.println("<-----------Menu------------->");
 		System.out.println("1. Repostaje normal");
 		System.out.println("2. Repostaje factura");
 		System.out.println("3. Ver todos los repostajes");

@@ -16,7 +16,7 @@ public class Gasolineria
 		Gasolineria gasoVacio = new Gasolineria();
 		 Scanner pedir = new Scanner(System.in);
 		 //Construccion de la fecha y hora en este momento
-		 String dateTime = DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a")
+		 String dateTime = DateTimeFormatter.ofPattern("dd MMM yyyy, hh:mm:ss a")
                  .format(LocalDateTime.now());
 		 
 		 
